@@ -1,13 +1,22 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
+# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
+# Maintainer: Truocolo <truocolo@aol.com>
 # Maintainer: Antoine Damhet <antoine.damhet@lse.epita.fr>
 
 pkgname=brightnessctl
 pkgver=0.5.1
 pkgrel=2
 pkgdesc="Lightweight brightness control tool"
-arch=('x86_64')
+arch=(
+  'x86_64'
+  'arm'
+)
 url='https://github.com/Hummer12007/brightnessctl'
 license=('MIT')
-depends=('systemd-libs')
+depends=(
+  'systemd-libs'
+)
 source=(
   "${pkgname}-${pkgver}.tar.gz::https://github.com/Hummer12007/brightnessctl/archive/${pkgver}.tar.gz"
 )
@@ -26,4 +35,4 @@ package() {
   install -m 0644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-# vim:set ts=2 sw=2 et:
+# vim:set sw=2 sts=-1 et:
